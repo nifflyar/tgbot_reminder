@@ -85,10 +85,10 @@ async def back_main(callback: CallbackQuery, state: FSMContext):
 async def tz_change(callback: CallbackQuery):
     user = await select_user(callback.from_user.id)
     if user.timezone_updated_at is None:
-        await callback.message.edit_text(text = lexicon_hdl[user.language]["change_timezone"], reply_markup= await merge_keyboards(await mainkb.change_timezone_keyboard(int(user.timezone[1::])-1), await back_button(user.language, "settings")))
+        await callback.message.edit_text(text = lexicon_hdl[user.language]["change_timezone"], reply_markup= await merge_keyboards(await mainkb.change_timezone_keyboard(int(user.timezone)), await back_button(user.language, "settings")))
     
     elif (datetime.datetime.utcnow() - user.timezone_updated_at > datetime.timedelta(days=1)):
-        await callback.message.edit_text(text = lexicon_hdl[user.language]["change_timezone"], reply_markup= await merge_keyboards(await mainkb.change_timezone_keyboard(int(user.timezone[1::])-1), await back_button(user.language, "settings")))
+        await callback.message.edit_text(text = lexicon_hdl[user.language]["change_timezone"], reply_markup= await merge_keyboards(await mainkb.change_timezone_keyboard(int(user.timezone)), await back_button(user.language, "settings")))
     
     else:
         await callback.answer(

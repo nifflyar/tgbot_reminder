@@ -8,7 +8,7 @@ lexicon_hdl = {
 
         "new_reminder" : "Для начала выбери тип напоминания",
 
-        "settings" : "настройки",
+        "settings" : "Настройки",
 
         "more" : ">w<",
 

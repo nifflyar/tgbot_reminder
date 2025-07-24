@@ -18,10 +18,10 @@ async def language_choice():
         inline_keyboard=[
             [
                 InlineKeyboardButton(
-                    text=f"русский{lexicon_kb['flags']['ru']}", callback_data="ru"
+                    text=f"Русский{lexicon_kb['flags']['ru']}", callback_data="ru"
                 ),
                 InlineKeyboardButton(
-                    text=f"english{lexicon_kb['flags']['en']}", callback_data="en"
+                    text=f"English{lexicon_kb['flags']['en']}", callback_data="en"
                 ),
             ]
         ]
