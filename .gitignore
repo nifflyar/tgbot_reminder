@@ -1,7 +1,0 @@
-.env
-env/
-.vscode/
-/test.py
-/alembic.ini
-.DS_Store
-**/__pycache__/
