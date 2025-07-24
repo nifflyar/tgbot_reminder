@@ -114,10 +114,10 @@ async def new_hourly_do_not_change(lang):
 
 
 async def new_yearly_check(lang, name: str, date: str):
-    return InlineKeyboardMarkup(inline_keyboard= [[InlineKeyboardButton(text = f"{lexicon_kb[lang]["title"]}: {name}", callback_data='editreg_yearly_name')],
-                                                        [InlineKeyboardButton(text=f'{lexicon_kb[lang]["date"]}: {date}', callback_data='editreg_yearly_date')],
-                                                        [InlineKeyboardButton(text=f"{lexicon_kb[lang]["cancel"]}", callback_data="regular"),
-                                                         InlineKeyboardButton(text = f"{lexicon_kb[lang]["create"]}", callback_data='new_yearly_create')]])
+    return InlineKeyboardMarkup(inline_keyboard= [[InlineKeyboardButton(text = f"{lexicon_kb[lang]['title']}: {name}", callback_data='editreg_yearly_name')],
+                                                        [InlineKeyboardButton(text=f"{lexicon_kb[lang]['date']}: {date}", callback_data='editreg_yearly_date')],
+                                                        [InlineKeyboardButton(text=f"{lexicon_kb[lang]['cancel']}", callback_data="regular"),
+                                                         InlineKeyboardButton(text = f"{lexicon_kb[lang]['create']}", callback_data='new_yearly_create')]])
 
 
 async def new_hourly_do_not_change(lang):
