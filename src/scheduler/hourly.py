@@ -4,8 +4,10 @@ from src.scheduler.scheduler import send_reminder
 
 
 def hourly_reminder(reminder_id, user_id, description, start_time, end_time, interval_min, scheduler):
+
     now = datetime.utcnow()
     today = now.date()
+    tomorrow = now.date() + timedelta(days=1)
 
     current = datetime.combine(today, start_time)
     end = datetime.combine(today, end_time)
@@ -22,7 +24,6 @@ def hourly_reminder(reminder_id, user_id, description, start_time, end_time, int
             job_id = f"hourly_{user_id}_{reminder_id}_{run_time.strftime('%Y%m%d%H%M')}"
 
             if not scheduler.get_job(job_id):
-
                 async def reminder_task(uid=user_id, text=description):
                     await send_reminder(uid, text)
 
@@ -36,6 +37,7 @@ def hourly_reminder(reminder_id, user_id, description, start_time, end_time, int
                 )
 
         current += interval
+        
 
 
 async def schedule_hourly_reminders_job(scheduler):
