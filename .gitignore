@@ -3,3 +3,4 @@ env/
 .vscode/
 /test.py
 /alembic.ini
+.DS_Store
