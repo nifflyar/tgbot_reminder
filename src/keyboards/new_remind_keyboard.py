@@ -46,7 +46,7 @@ async def new_remind_last(lang, name, day, time):
 
 async def new_regular_check(lang, name: str, time: str):
     return InlineKeyboardMarkup(inline_keyboard= [[InlineKeyboardButton(text = f"{lexicon_kb[lang]['title']}: {name}", callback_data='editreg_daily_name')],
-                                                        [InlineKeyboardButton(text=f'{lexicon_kb[lang]['time']}: {time}', callback_data='editreg_daily_time')],
+                                                        [InlineKeyboardButton(text=f"{lexicon_kb[lang]['time']}: {time}", callback_data='editreg_daily_time')],
                                                         [InlineKeyboardButton(text=f"{lexicon_kb[lang]['cancel']}", callback_data="regular"),
                                                          InlineKeyboardButton(text = f"{lexicon_kb[lang]['create']}", callback_data='new_daily_right')]])
 
