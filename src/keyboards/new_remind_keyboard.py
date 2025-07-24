@@ -31,11 +31,11 @@ async def new_dont_change(lang):
     return InlineKeyboardMarkup(inline_keyboard= [[InlineKeyboardButton(text = lexicon_kb[lang]["dont_change"], callback_data='do_not_change')]])
 
 async def new_remind_last(lang, name, day, time):
-    return InlineKeyboardMarkup(inline_keyboard= [[InlineKeyboardButton(text = f"{lexicon_kb[lang]["title"]}: {name}", callback_data='editname')],
-                                                        [InlineKeyboardButton(text = f"{lexicon_kb[lang]["date"]}: {day}", callback_data='editdate')],
-                                                        [InlineKeyboardButton(text=f'{lexicon_kb[lang]["time"]}: {time}', callback_data='edittime')],
-                                                        [InlineKeyboardButton(text=f"{lexicon_kb[lang]["cancel"]}", callback_data="new"),
-                                                         InlineKeyboardButton(text = f"{lexicon_kb[lang]["create"]}", callback_data='new_onetime_create')]])
+    return InlineKeyboardMarkup(inline_keyboard= [[InlineKeyboardButton(text = f"{lexicon_kb[lang]['title']}: {name}", callback_data='editname')],
+                                                        [InlineKeyboardButton(text = f"{lexicon_kb[lang]['date']}: {day}", callback_data='editdate')],
+                                                        [InlineKeyboardButton(text=f"{lexicon_kb[lang]['time']}: {time}", callback_data='edittime')],
+                                                        [InlineKeyboardButton(text=f"{lexicon_kb[lang]['cancel']}", callback_data="new"),
+                                                         InlineKeyboardButton(text = f"{lexicon_kb[lang]['create']}", callback_data='new_onetime_create')]])
 
 
 
@@ -45,10 +45,10 @@ async def new_remind_last(lang, name, day, time):
 
 
 async def new_regular_check(lang, name: str, time: str):
-    return InlineKeyboardMarkup(inline_keyboard= [[InlineKeyboardButton(text = f"{lexicon_kb[lang]["title"]}: {name}", callback_data='editreg_daily_name')],
-                                                        [InlineKeyboardButton(text=f'{lexicon_kb[lang]["time"]}: {time}', callback_data='editreg_daily_time')],
-                                                        [InlineKeyboardButton(text=f"{lexicon_kb[lang]["cancel"]}", callback_data="regular"),
-                                                         InlineKeyboardButton(text = f"{lexicon_kb[lang]["create"]}", callback_data='new_daily_right')]])
+    return InlineKeyboardMarkup(inline_keyboard= [[InlineKeyboardButton(text = f"{lexicon_kb[lang]['title']}: {name}", callback_data='editreg_daily_name')],
+                                                        [InlineKeyboardButton(text=f'{lexicon_kb[lang]['time']}: {time}', callback_data='editreg_daily_time')],
+                                                        [InlineKeyboardButton(text=f"{lexicon_kb[lang]['cancel']}", callback_data="regular"),
+                                                         InlineKeyboardButton(text = f"{lexicon_kb[lang]['create']}", callback_data='new_daily_right')]])
 
 
 async def new_regular_type(lang):
@@ -95,12 +95,12 @@ async def new_reg_daily_do_not_change(lang):
 
 
 async def new_hourly_check(lang, name: str, interval: str, start_time: str, end_time: str):
-    return InlineKeyboardMarkup(inline_keyboard= [[InlineKeyboardButton(text = f"{lexicon_kb[lang]["title"]}: {name}", callback_data='editreg_hourly_name')],
-                                                        [InlineKeyboardButton(text=f'{lexicon_kb[lang]["interval"]}: {interval}', callback_data='editreg_hourly_interval')],
-                                                        [InlineKeyboardButton(text=f'{lexicon_kb[lang]["start_time"]}: {start_time}', callback_data='editreg_hourly_start_time')],
-                                                        [InlineKeyboardButton(text=f'{lexicon_kb[lang]["end_time"]}: {end_time}', callback_data='editreg_hourly_end_time')],
-                                                        [InlineKeyboardButton(text=f"{lexicon_kb[lang]["cancel"]}", callback_data="regular"),
-                                                         InlineKeyboardButton(text = f"{lexicon_kb[lang]["create"]}", callback_data='new_hourly_right')]])
+    return InlineKeyboardMarkup(inline_keyboard= [[InlineKeyboardButton(text = f"{lexicon_kb[lang]['title']}: {name}", callback_data='editreg_hourly_name')],
+                                                        [InlineKeyboardButton(text=f"{lexicon_kb[lang]['interval']}: {interval}", callback_data='editreg_hourly_interval')],
+                                                        [InlineKeyboardButton(text=f"{lexicon_kb[lang]['start_time']}: {start_time}", callback_data='editreg_hourly_start_time')],
+                                                        [InlineKeyboardButton(text=f"{lexicon_kb[lang]['end_time']}: {end_time}", callback_data='editreg_hourly_end_time')],
+                                                        [InlineKeyboardButton(text=f"{lexicon_kb[lang]['cancel']}", callback_data="regular"),
+                                                         InlineKeyboardButton(text = f"{lexicon_kb[lang]['create']}", callback_data='new_hourly_right')]])
 
 
 async def new_hourly_do_not_change(lang):

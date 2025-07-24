@@ -107,7 +107,7 @@ async def daily_mult(message: Message, state: FSMContext):
             message=message,
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
-            text=f"{lexicon_hdl[user.language]["wrong_title"]}\n\n{lexicon_hdl[user.language]["ask_daily_title"]}",
+            text=f"{lexicon_hdl[user.language]['wrong_title']}\n\n{lexicon_hdl[user.language]['ask_daily_title']}",
             reply_markup=await newkb.regular_type_cancel_button(user.language),
             parse_mode="Markdown"
         )
@@ -151,7 +151,7 @@ async def daily_name(message: Message, state: FSMContext):
             message=message,
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
-            text=f"{lexicon_hdl[user.language]["wrong_time_duplicate"]}\n\n{lexicon_hdl[user.language]["ask_daily_time"]}",
+            text=f"{lexicon_hdl[user.language]['wrong_time_duplicate']}\n\n{lexicon_hdl[user.language]['ask_daily_time']}",
             reply_markup=await newkb.regular_type_cancel_button(user.language),
             parse_mode="Markdown"
         )
@@ -164,7 +164,7 @@ async def daily_name(message: Message, state: FSMContext):
             message=message,
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
-            text=f"{lexicon_hdl[user.language]["wrong_time_limit"]}\n\n{lexicon_hdl[user.language]["ask_daily_time"]}",
+            text=f"{lexicon_hdl[user.language]['wrong_time_limit']}\n\n{lexicon_hdl[user.language]['ask_daily_time']}",
             reply_markup=await newkb.regular_type_cancel_button(user.language),
             parse_mode="Markdown"
         )
@@ -177,7 +177,7 @@ async def daily_name(message: Message, state: FSMContext):
             message=message,
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
-            text=f"{lexicon_hdl[user.language]["wrong_time"]}\n\n{lexicon_hdl[user.language]["ask_daily_time"]}",
+            text=f"{lexicon_hdl[user.language]['wrong_time']}\n\n{lexicon_hdl[user.language]['ask_daily_time']}",
             reply_markup=await newkb.regular_type_cancel_button(user.language),
             parse_mode="Markdown"
         )
@@ -265,7 +265,7 @@ async def edit_name(message: Message, state: FSMContext):
             message=message,
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
-            text=f"{lexicon_hdl[user.language]["wrong_title"]}\n\n{lexicon_hdl[user.language]["ask_daily_title"]}",
+            text=f"{lexicon_hdl[user.language]['wrong_title']}\n\n{lexicon_hdl[user.language]['ask_daily_title']}",
             reply_markup=await newkb.regular_type_cancel_button(user.language),
             parse_mode="Markdown"
         )
@@ -298,7 +298,7 @@ async def edit_time(message: Message, state: FSMContext):
             message=message,
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
-            text=f"{lexicon_hdl[user.language]["wrong_time_duplicate"]}\n\n{lexicon_hdl[user.language]["ask_daily_time"]}",
+            text=f"{lexicon_hdl[user.language]['wrong_time_duplicate']}\n\n{lexicon_hdl[user.language]['ask_daily_time']}",
             reply_markup=await newkb.regular_type_cancel_button(user.language),
             parse_mode="Markdown"
         )
@@ -311,7 +311,7 @@ async def edit_time(message: Message, state: FSMContext):
             message=message,
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
-            text=f"{lexicon_hdl[user.language]["wrong_time_limit"]}\n\n{lexicon_hdl[user.language]["ask_daily_time"]}",
+            text=f"{lexicon_hdl[user.language]['wrong_time_limit']}\n\n{lexicon_hdl[user.language]['ask_daily_time']}",
             reply_markup=await newkb.regular_type_cancel_button(user.language),
             parse_mode="Markdown"
         )
@@ -323,7 +323,7 @@ async def edit_time(message: Message, state: FSMContext):
             message=message,
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
-            text=f"{lexicon_hdl[user.language]["wrong_time"]}\n\n{lexicon_hdl[user.language]["ask_daily_time"]}",
+            text=f"{lexicon_hdl[user.language]['wrong_time']}\n\n{lexicon_hdl[user.language]['ask_daily_time']}",
             reply_markup=await newkb.regular_type_cancel_button(user.language),
             parse_mode="Markdown"
         )

@@ -78,7 +78,7 @@ async def hourly_interval(message: Message, state: FSMContext):
             message=message,
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
-            text=f"{lexicon_hdl[user.language]["wrong_title"]}\n\n{lexicon_hdl[user.language]["ask_hourly_title"]}",
+            text=f"{lexicon_hdl[user.language]['wrong_title']}\n\n{lexicon_hdl[user.language]['ask_hourly_title']}",
             reply_markup=await newkb.regular_type_cancel_button(user.language),
             parse_mode="Markdown"
         )
@@ -115,7 +115,7 @@ async def hourly_start_time(message: Message, state: FSMContext):
             message=message,
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
-            text=f"{lexicon_hdl[user.language]["wrong_interval"]}\n\n{lexicon_hdl[user.language]["ask_hourly_interval"]}",
+            text=f"{lexicon_hdl[user.language]['wrong_interval']}\n\n{lexicon_hdl[user.language]['ask_hourly_interval']}",
             reply_markup=await newkb.regular_type_cancel_button(user.language),
             parse_mode="Markdown"
         )
@@ -153,7 +153,7 @@ async def hourly_start_time(message: Message, state: FSMContext):
             message=message,
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
-            text=f"{lexicon_hdl[user.language]["wrong_time"]}\n\n{lexicon_hdl[user.language]["ask_hourly_start_time"]}",
+            text=f"{lexicon_hdl[user.language]['wrong_time']}\n\n{lexicon_hdl[user.language]['ask_hourly_start_time']}",
             reply_markup=await newkb.regular_type_cancel_button(user.language),
             parse_mode="Markdown"
         )
@@ -191,7 +191,7 @@ async def hourly_start_time(message: Message, state: FSMContext):
             message=message,
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
-            text=f"{lexicon_hdl[user.language]["wrong_time"]}\n\n{lexicon_hdl[user.language]["ask_hourly_end_time"]}",
+            text=f"{lexicon_hdl[user.language]['wrong_time']}\n\n{lexicon_hdl[user.language]['ask_hourly_end_time']}",
             reply_markup=await newkb.regular_type_cancel_button(user.language),
             parse_mode="Markdown"
         )
@@ -323,7 +323,7 @@ async def edit_name(message: Message, state: FSMContext):
             message=message,
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
-            text=f"{lexicon_hdl[user.language]["wrong_title"]}\n\n{lexicon_hdl[user.language]["ask_hourly_title"]}",
+            text=f"{lexicon_hdl[user.language]['wrong_title']}\n\n{lexicon_hdl[user.language]['ask_hourly_title']}",
             reply_markup=await newkb.regular_type_cancel_button(user.language),
             parse_mode="Markdown"
         )
@@ -345,7 +345,7 @@ async def edit_interval(message: Message, state: FSMContext):
             message=message,
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
-            text=f"{lexicon_hdl[user.language]["wrong_interval"]}\n\n{lexicon_hdl[user.language]["ask_hourly_interval"]}",
+            text=f"{lexicon_hdl[user.language]['wrong_interval']}\n\n{lexicon_hdl[user.language]['ask_hourly_interval']}",
             reply_markup=await newkb.regular_type_cancel_button(user.language),
             parse_mode="Markdown"
         )
@@ -367,7 +367,7 @@ async def edit_starttime(message: Message, state: FSMContext):
             message=message,
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
-            text=f"{lexicon_hdl[user.language]["wrong_time"]}\n\n{lexicon_hdl[user.language]["ask_hourly_start_time"]}",
+            text=f"{lexicon_hdl[user.language]['wrong_time']}\n\n{lexicon_hdl[user.language]['ask_hourly_start_time']}",
             reply_markup=await newkb.regular_type_cancel_button(user.language),
             parse_mode="Markdown"
         )
@@ -390,7 +390,7 @@ async def edit_endtime(message: Message, state: FSMContext):
             message=message,
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
-            text=f"{lexicon_hdl[user.language]["wrong_time"]}\n\n{lexicon_hdl[user.language]["ask_hourly_end_time"]}",
+            text=f"{lexicon_hdl[user.language]['wrong_time']}\n\n{lexicon_hdl[user.language]['ask_hourly_end_time']}",
             reply_markup=await newkb.regular_type_cancel_button(user.language),
             parse_mode="Markdown"
         )

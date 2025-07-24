@@ -204,4 +204,4 @@ lexicon_hdl = {
 
 
 def reminders_limit(lang, max_):
-    return f"{lexicon_hdl[lang]["limit_reminders1"]}{max_}{lexicon_hdl[lang]["limit_reminders2"]}"
+    return f"{lexicon_hdl[lang]['limit_reminders1']}{max_}{lexicon_hdl[lang]['limit_reminders2']}"

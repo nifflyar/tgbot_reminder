@@ -83,7 +83,7 @@ async def once_date(message : Message, state: FSMContext):
                 message=message,
                 chat_id=message.chat.id,
                 message_id=data["first_mes_id"],
-                text=f"{lexicon_hdl[user.language]["wrong_title"]}\n\n{lexicon_hdl[user.language]["ask_title"]}",
+                text=f"{lexicon_hdl[user.language]['wrong_title']}\n\n{lexicon_hdl[user.language]['ask_title']}",
                 reply_markup=await newkb.new_cancel_button(user.language),
                 parse_mode="Markdown"
             )
@@ -95,7 +95,7 @@ async def once_date(message : Message, state: FSMContext):
 
     await message.bot.edit_message_text(chat_id=message.chat.id,
                                 message_id=data["first_mes_id"],
-                                text=f"{lexicon_hdl[user.language]["ask_date"]} dd/mm", 
+                                text=f"{lexicon_hdl[user.language]['ask_date']} dd/mm", 
                                 reply_markup=await newkb.new_cancel_button(user.language))
     
     await state.set_state(Yearly.yearly_date)
@@ -119,7 +119,7 @@ async def once_time(message : Message, state: FSMContext):
                 message=message,
                 chat_id=message.chat.id,
                 message_id=data["first_mes_id"],
-                text=f"{lexicon_hdl[user.language]["wrong_date"]} !\n\n{lexicon_hdl[user.language]["ask_date"]}",
+                text=f"{lexicon_hdl[user.language]['wrong_date']} !\n\n{lexicon_hdl[user.language]['ask_date']}",
                 parse_mode= "Markdown",
                 reply_markup= await newkb.new_cancel_button(user.language)
             )
@@ -214,7 +214,7 @@ async def edit_name(message: Message, state: FSMContext):
                 message=message,
                 chat_id=message.chat.id,
                 message_id=data["first_mes_id"],
-                text=f"{lexicon_hdl[user.language]["wrong_title"]}\n\n{lexicon_hdl[user.language]["ask_title"]}",
+                text=f"{lexicon_hdl[user.language]['wrong_title']}\n\n{lexicon_hdl[user.language]['ask_title']}",
                 reply_markup=await newkb.new_cancel_button(user.language),
                 parse_mode="Markdown"
             )
@@ -241,7 +241,7 @@ async def edit_time(message: Message, state: FSMContext):
                 message=message,
                 chat_id=message.chat.id,
                 message_id=data["first_mes_id"],
-                text=f"{lexicon_hdl[user.language]["wrong_date"]} !\n\n{lexicon_hdl[user.language]["ask_date"]}",
+                text=f"{lexicon_hdl[user.language]['wrong_date']} !\n\n{lexicon_hdl[user.language]['ask_date']}",
                 parse_mode= "Markdown",
                 reply_markup= await newkb.new_cancel_button(user.language)
             )
