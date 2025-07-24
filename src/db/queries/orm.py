@@ -200,7 +200,7 @@ async def hourly_reminder_add(user_id : int,
         
         from src.scheduler.scheduler import scheduler
 
-        await hourly_reminder(
+        hourly_reminder(
             reminder_id=reminder.id,
             user_id=user.tg_id,
             description=description,
