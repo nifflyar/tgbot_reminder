@@ -20,5 +20,4 @@ jobs:
           cd ~/tgbot_reminder # Переход в директорию с проектом на сервере
           git pull origin main # Вытягивание последних изменений из ветки main
           git status # Проверка состояния git-репозитория
-          npm install --only=prod # Установка только продакшн-зависимостей
           pm2 restart tg-bot # Перезапуск процесса tg-bot с помощью PM2
