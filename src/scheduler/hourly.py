@@ -7,23 +7,15 @@ def hourly_reminder(reminder_id, user_id, description, start_time, end_time, int
     now = datetime.utcnow()
     today = now.date()
 
+    current = datetime.combine(today, start_time)
+    end = datetime.combine(today, end_time)
 
-    is_full_day = start_time == end_time == datetime.strptime("00:00", "%H:%M").time()
+    if end <= current:
+        end += timedelta(days=1)
 
-    if is_full_day:
-
-        current = datetime.combine(today - timedelta(days=1), start_time)
-        end = datetime.combine(today, end_time)
-    else:
-        current = datetime.combine(today, start_time)
-        end = datetime.combine(today, end_time)
-
-        if end <= current:
-            end += timedelta(days=1)  
-    end_inclusive = end
     interval = timedelta(minutes=interval_min)
 
-    while current <= end_inclusive:
+    while current <= end:
         run_time = current
 
         if run_time >= now:

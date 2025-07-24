@@ -5,7 +5,7 @@ from src.db.config import settings
 
 from src.db.models import UsersOrm, OneTimeNewReminderOrm, DailyNewReminderOrm, DailyReminderTimes, HourlyNewReminderOrm, YearlyNewReminderOrm, WeeklyNewReminderOrm, WeeklyReminderDays, MonthlyNewReminderOrm, MonthlyReminderDays
 
-print("👉 Подключение к БД:", settings.DATABASE_URL_asyncpg) 
+print("Подключение к БД:", settings.DATABASE_URL_asyncpg) 
 
 async def create_tables():
     async with async_engine.begin() as conn:
