@@ -1,5 +1,5 @@
 import calendar
-from datetime import UTC, datetime, timedelta
+from datetime import datetime, timedelta
 from typing import Any
 
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
@@ -13,6 +13,9 @@ from aiogram.fsm.state import StatesGroup, State
 from aiogram.fsm.context import FSMContext
 
 from lexicon.lexicon_calendar import lexicon_calendar
+
+from datetime import timezone
+UTC = timezone.utc
 
 
 import pytz
