@@ -45,36 +45,3 @@ def schedule_archive_onetime_reminders(scheduler: AsyncIOScheduler):
     )
 
 
-
-# async def send_reminders():
-#     """Отправляет напоминания пользователям ровно в :00 минут."""
-#     now = datetime.utcnow()
-#     date_today = now.date() # "02/03/2025"
-#     time_now = now.time().replace(second=0, microsecond=0)   # "14:00"
-
-#     # Получаем разовые напоминания
-#     reminders = await select_now_onetime_reminders(date_today=date_today, time_now=time_now)
-
-#     # Отправляем разовые напоминания
-#     for reminder in reminders:
-#         user = await select_user_id(user_id=reminder.user_id)
-#         await bot.send_message(chat_id=user.tg_id, text=f"{reminder.description}")
-
-#     # Удаляем разовые напоминания после отправки
-#     # await session.execute(delete(Reminder).where(
-#     #     (Reminder.date == date_today) & (Reminder.time == time_now)
-#     # ))
-
-#     # Получаем ежедневные напоминания
-
-    
-#     # daily_reminders = await select_now_daily_reminder(time_now=time_now)
-
-#     # # Отправляем ежедневные напоминания
-#     # for daily in daily_reminders:
-#     #     await bot.send_message(daily.tg_id, f"{daily.description}")
-
-
-# # Запускаем проверку каждую минуту
-# def start_scheduler():
-#     scheduler.add_job(send_reminders, "cron", second=0)
