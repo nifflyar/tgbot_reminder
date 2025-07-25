@@ -4,7 +4,7 @@ from sqlalchemy import DateTime, Integer, and_, cast, delete, func, insert, insp
 from sqlalchemy.orm import aliased, contains_eager, joinedload, selectinload
 
 
-from scheduler.hourly import hourly_reminder
+from src.scheduler.hourly import hourly_reminder
 from src.scheduler.scheduler import remove_hourly_reminder_jobs
 from src.db.database import Base, async_engine, async_session_factory
 from src.db.models import OneTimeNewReminderOrm, DailyReminderTimes, DailyNewReminderOrm, UsersOrm, WeeklyNewReminderOrm, WeeklyReminderDays, YearlyNewReminderOrm, MonthlyNewReminderOrm, MonthlyReminderDays, HourlyNewReminderOrm

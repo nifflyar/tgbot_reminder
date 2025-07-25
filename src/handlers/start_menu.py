@@ -4,11 +4,12 @@ from aiogram.types import Message, CallbackQuery
 from aiogram.filters import CommandStart
 from aiogram.fsm.context import FSMContext
 
+from scheduler.scheduler_utils import select_timezone_tg_id
 import src.keyboards.main_keyboard as mainkb
 import src.keyboards.new_remind_keyboard as newkb
 from src.keyboards.keyboard_func import merge_keyboards, back_to_main, back_button
 
-from src.db.queries.orm import select_user, insert_users, update_user
+from src.db.queries.orm import select_timezone, select_user, insert_users, update_user
 from src.lexicon.lexicon_handlers import lexicon_hdl
 
 from src.handlers.new_reminders.onetime_type import router as onetime_router
@@ -84,11 +85,13 @@ async def back_main(callback: CallbackQuery, state: FSMContext):
 @router.callback_query(F.data == "change_timezone")
 async def tz_change(callback: CallbackQuery):
     user = await select_user(callback.from_user.id)
+    tz_user = int(await select_timezone(user_id=user.id))
+
     if user.timezone_updated_at is None:
-        await callback.message.edit_text(text = lexicon_hdl[user.language]["change_timezone"], reply_markup= await merge_keyboards(await mainkb.change_timezone_keyboard(int(user.timezone)), await back_button(user.language, "settings")))
+        await callback.message.edit_text(text = lexicon_hdl[user.language]["change_timezone"], reply_markup= await merge_keyboards(await mainkb.change_timezone_keyboard(tz_user), await back_button(user.language, "settings")))
     
     elif (datetime.datetime.utcnow() - user.timezone_updated_at > datetime.timedelta(days=1)):
-        await callback.message.edit_text(text = lexicon_hdl[user.language]["change_timezone"], reply_markup= await merge_keyboards(await mainkb.change_timezone_keyboard(int(user.timezone)), await back_button(user.language, "settings")))
+        await callback.message.edit_text(text = lexicon_hdl[user.language]["change_timezone"], reply_markup= await merge_keyboards(await mainkb.change_timezone_keyboard(tz_user), await back_button(user.language, "settings")))
     
     else:
         await callback.answer(
