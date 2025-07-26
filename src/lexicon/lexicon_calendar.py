@@ -7,19 +7,19 @@ lexicon_calendar = {
     "ru" : {
         "days_of_week" :["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"],
         "months" : ["Янв", "Февр", "Март", "Апр", "Май", "Июнь", "Июль", "Авг", "Сент", "Окт", "Нояб", "Дек"],
-        "cancel" : "отмена",
-        "do_not_change" : "не изменять",
-        "today" : "сегодня",
-        "tomorrow" : "завтра"
+        "cancel" : "Отмена",
+        "do_not_change" : "Не изменять",
+        "today" : "Сегодня",
+        "tomorrow" : "Завтра"
     },
 
     "en" : {
         "days_of_week" : ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
         "months" : [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
         "cancel" : "cancel",
-        "do_not_change" : "do not change",
-        "today" : "today",
-        "tomorrow" : "tomorrow"
+        "do_not_change" : "Don't change",
+        "today" : "Today",
+        "tomorrow" : "Tomorrow"
     }
     
 }
@@ -37,8 +37,8 @@ lexicon_locale = {
         days_of_week=["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"],
         months=["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"],
         cancel_caption="",
-        today_caption="сегодня",
-        tomorrow_caption="завтра"
+        today_caption="Сегодня",
+        tomorrow_caption="Завтра"
     ),
     # "kk": CalendarLabels(
     #     days_of_week=["Дс", "Сс", "Ср", "Бс", "Жм", "Сн", "Жк"],
@@ -46,7 +46,7 @@ lexicon_locale = {
     #     cancel_caption="Бас тарту",
     #     today_caption="Бүгін"
     # ),
-    "en": CalendarLabels(today_caption="today",
-                         tomorrow_caption="tomorrow",
+    "en": CalendarLabels(today_caption="Today",
+                         tomorrow_caption="Tomorrow",
                          cancel_caption="")
 }

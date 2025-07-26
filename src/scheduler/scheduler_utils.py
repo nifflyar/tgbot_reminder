@@ -90,7 +90,6 @@ async def mark_onetime_reminder_as_sent(reminder_id: int):
         )
         await session.execute(stmt)
         await session.commit()
-        
 
 
 async def archive_expired_onetime_reminders():

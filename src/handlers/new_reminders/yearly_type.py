@@ -148,7 +148,7 @@ async def once_edit_name(callback: CallbackQuery, state: FSMContext):
 
     await callback.message.edit_text(text=lexicon_hdl[user.language]["ask_title"], 
                                     parse_mode="Markdown",
-                                    reply_markup=await newkb.new_hourly_do_not_change(user.language))
+                                    reply_markup=await newkb.new_yearly_do_not_change(user.language))
 
     await state.set_state(Yearly.yearly_edit_name)
 
@@ -161,7 +161,7 @@ async def once_edit_date(callback : CallbackQuery, state: FSMContext):
 
     await callback.message.edit_text(text=lexicon_hdl[user.language]["ask_date"], 
                                     parse_mode="Markdown",
-                                    reply_markup=await newkb.new_hourly_do_not_change(user.language))
+                                    reply_markup=await newkb.new_yearly_do_not_change(user.language))
 
     await state.set_state(Yearly.yearly_edit_date)
 

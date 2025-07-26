@@ -362,7 +362,8 @@ async def select_my_active_daily_reminders(tg_id):
             select(DailyNewReminderOrm)
             .options(joinedload(DailyNewReminderOrm.times))
             .where(
-                and_(DailyNewReminderOrm.user_id == user.id, DailyNewReminderOrm.is_active == True))
+                and_(DailyNewReminderOrm.user_id == user.id, 
+                     DailyNewReminderOrm.is_active == True))
             .order_by(DailyNewReminderOrm.description)
         )
 
@@ -386,14 +387,14 @@ async def select_my_archive_daily_reminders(tg_id):
             select(DailyNewReminderOrm)
             .options(joinedload(DailyNewReminderOrm.times))
             .where(
-                and_(DailyNewReminderOrm.user_id == user.id, DailyNewReminderOrm.is_active == False))
+                and_(DailyNewReminderOrm.user_id == user.id, 
+                     DailyNewReminderOrm.is_active == False))
             .order_by(DailyNewReminderOrm.description)
         )
 
         result = await session.execute(stmt)
         reminders = result.unique().scalars().all()
 
-        # Сдвигаем время в каждой time
         for r in reminders:
             for t in r.times:
                 shifted = (datetime.datetime.combine(datetime.date.today(), t.time) + datetime.timedelta(hours=int(user.timezone))).time()

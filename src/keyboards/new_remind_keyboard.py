@@ -28,7 +28,8 @@ async def new_remind_first(lang):
 
 
 async def new_dont_change(lang):
-    return InlineKeyboardMarkup(inline_keyboard= [[InlineKeyboardButton(text = lexicon_kb[lang]["dont_change"], callback_data='do_not_change')]])
+    return InlineKeyboardMarkup(inline_keyboard= [[InlineKeyboardButton(text = lexicon_kb[lang]["dont_change"], callback_data='do_not_change')],
+                                                  [InlineKeyboardButton(text = lexicon_kb[lang]["cancel"], callback_data="new")]])
 
 async def new_remind_last(lang, name, day, time):
     return InlineKeyboardMarkup(inline_keyboard= [[InlineKeyboardButton(text = f"{lexicon_kb[lang]['title']}: {name}", callback_data='editname')],
