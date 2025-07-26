@@ -224,7 +224,7 @@ async def edit_name(callback: CallbackQuery, state: FSMContext):
     user = await select_user(callback.from_user.id)
     await state.update_data(first_mes_id = callback.message.message_id)
 
-    await callback.message.edit_text(text=lexicon_hdl[user.language]["ask_hourly_name"], 
+    await callback.message.edit_text(text=lexicon_hdl[user.language]["ask_hourly_title"], 
                                     parse_mode="Markdown",
                                     reply_markup=await newkb.new_hourly_do_not_change(user.language))
     

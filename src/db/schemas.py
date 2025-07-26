@@ -14,7 +14,7 @@ class TimeSchema(BaseModel):
 
 
 class IntervalSchema(BaseModel):
-    interval: int = Field(ge=1, le=300)
+    interval: int = Field(ge=15, le=300)
 
 
 class DateSchema(BaseModel):

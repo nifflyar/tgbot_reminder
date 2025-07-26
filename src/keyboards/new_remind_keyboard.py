@@ -120,6 +120,6 @@ async def new_yearly_check(lang, name: str, date: str):
                                                          InlineKeyboardButton(text = f"{lexicon_kb[lang]['create']}", callback_data='new_yearly_create')]])
 
 
-async def new_hourly_do_not_change(lang):
+async def new_yearly_do_not_change(lang):
     return InlineKeyboardMarkup(inline_keyboard= [[InlineKeyboardButton(text=lexicon_kb[lang]["cancel"],callback_data="regular"),
                                                    InlineKeyboardButton(text = lexicon_kb[lang]["dont_change"], callback_data='reg_yearly_do_not_change')]])

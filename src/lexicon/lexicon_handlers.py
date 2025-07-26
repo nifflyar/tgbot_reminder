@@ -42,8 +42,8 @@ lexicon_hdl = {
 
 
         #! daily type
-        "ask_daily_type" : "Теперь выбери тип повторения",
         "ask_daily_title" : "О чем мне тебе напоминать?",
+        "ask_daily_type" : "Теперь выбери тип повторения",
         "ask_daily_time" : "Во сколько? (HH:MM HH:MM ...)",
         "check_daily" : 'проверь\nтип повторения - *каждый день*',
 
