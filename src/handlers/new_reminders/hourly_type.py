@@ -324,7 +324,7 @@ async def edit_name(message: Message, state: FSMContext):
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
             text=f"{lexicon_hdl[user.language]['wrong_title']}\n\n{lexicon_hdl[user.language]['ask_hourly_title']}",
-            reply_markup=await newkb.regular_type_cancel_button(user.language),
+            reply_markup=await newkb.new_hourly_do_not_change(user.language),
             parse_mode="Markdown"
         )
         return
@@ -346,7 +346,7 @@ async def edit_interval(message: Message, state: FSMContext):
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
             text=f"{lexicon_hdl[user.language]['wrong_interval']}\n\n{lexicon_hdl[user.language]['ask_hourly_interval']}",
-            reply_markup=await newkb.regular_type_cancel_button(user.language),
+            reply_markup=await newkb.new_hourly_do_not_change(user.language),
             parse_mode="Markdown"
         )
         return
@@ -368,7 +368,7 @@ async def edit_starttime(message: Message, state: FSMContext):
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
             text=f"{lexicon_hdl[user.language]['wrong_time']}\n\n{lexicon_hdl[user.language]['ask_hourly_start_time']}",
-            reply_markup=await newkb.regular_type_cancel_button(user.language),
+            reply_markup=await newkb.new_hourly_do_not_change(user.language),
             parse_mode="Markdown"
         )
         return
@@ -391,7 +391,7 @@ async def edit_endtime(message: Message, state: FSMContext):
             chat_id=message.chat.id,
             message_id=data["first_mes_id"],
             text=f"{lexicon_hdl[user.language]['wrong_time']}\n\n{lexicon_hdl[user.language]['ask_hourly_end_time']}",
-            reply_markup=await newkb.regular_type_cancel_button(user.language),
+            reply_markup=await newkb.new_hourly_do_not_change(user.language),
             parse_mode="Markdown"
         )
         return
