@@ -337,7 +337,7 @@ async def edit_interval(message: Message, state: FSMContext):
     data = await state.get_data()
 
     try:
-        IntervalSchema.model_validate({"interval": int(message.text)})
+        IntervalSchema.model_validate({"interval": message.text})
     except ValidationError as e:
         await safe_delete(message)
         await safe_edit_text(
