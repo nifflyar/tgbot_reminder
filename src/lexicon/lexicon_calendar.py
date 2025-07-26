@@ -16,7 +16,7 @@ lexicon_calendar = {
     "en" : {
         "days_of_week" : ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
         "months" : [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        "cancel" : "cancel",
+        "cancel" : "Cancel",
         "do_not_change" : "Don't change",
         "today" : "Today",
         "tomorrow" : "Tomorrow"
