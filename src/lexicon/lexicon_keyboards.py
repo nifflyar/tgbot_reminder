@@ -16,7 +16,7 @@ lexicon_kb = {
         "contacts" : "Контакты",
         "donate" : "Донат <3",
         "cancel" : "Отмена",
-        "onetime_type" : "Одноразовое",
+        "onetime_type" : "Разовое",
         "regular_type" : "Повторяющееся",
 
 
