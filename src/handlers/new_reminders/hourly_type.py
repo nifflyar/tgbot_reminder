@@ -276,7 +276,7 @@ async def remind_check(callback: CallbackQuery, state: FSMContext):
     user = await select_user(callback.from_user.id)
     data = await state.get_data()
 
-    await callback.message.edit_text(text=lexicon_hdl[user.language]["check_daily"], 
+    await callback.message.edit_text(text=lexicon_hdl[user.language]["check_hourly"], 
                                     reply_markup=await newkb.new_hourly_check(
                                         lang=user.language,
                                         name=data["reg_hourly_name"],
@@ -303,8 +303,8 @@ async def update_reminder_field(lang, state: FSMContext, field: str, value: str,
                                         name=data["reg_hourly_name"],
                                         interval=data["reg_hourly_interval"],
                                         start_time=data["reg_hourly_start_time"],
-                                        end_time=data["reg_hourly_end_time"]
-                                    ))
+                                        end_time=data["reg_hourly_end_time"]),
+                                parse_mode="Markdown")
     await state.set_state(None)
 
 

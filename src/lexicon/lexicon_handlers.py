@@ -31,13 +31,13 @@ lexicon_hdl = {
         "ask_title" : "О чем мне тебе напомнить?", 
         "ask_date" : "В какой день?",
         "ask_time" : "И во сколько? (HH:MM)",
-        "check" : "проверь",
+        "check" : "Проверь",
 
         "wrong_title" : "Слишком длинный текст (макс. 36 символов)",
         "wrong_time" : "Неправильный формат времени",
         "wrong_time_limit" : "Введено больше 4 времени",
         "wrong_time_duplicate" : "Нельзя вводить повторяющиеся времена",
-        "wrong_date" : "Неправильный формат даты DD/MM",
+        "wrong_date" : "Неправильный формат даты",
         "wrong_interval" : "Неправильный формат интервала (мин. - 15 минут, макс. - 300 минут)",
 
 
@@ -45,18 +45,24 @@ lexicon_hdl = {
         "ask_daily_title" : "О чем мне тебе напоминать?",
         "ask_daily_type" : "Теперь выбери тип повторения",
         "ask_daily_time" : "Во сколько? (HH:MM HH:MM ...)",
-        "check_daily" : 'проверь\nтип повторения - *каждый день*',
+        "check_daily" : 'Проверь\nтип повторения - *Ежедневно*',
 
         #! hourly type
         "ask_hourly_title" : "О чем мне тебе напоминать?",
         "ask_hourly_interval" : "Какой интервал между напоминиями? (минуты)",
         "ask_hourly_start_time" : "Со скольки тебя напоминать?",
         "ask_hourly_end_time" : "И до скольки?",
-        "check_hourly" : 'проверь\nтип повторения - *почасово*',
+        "check_hourly" : 'Проверь\nТип повторения - *Почасово*',
+
+        #! yearly type 
+        "check_yearly" : "Проверь\Тип повторения - *Ежегодно*",
+        "ask_yearly_date" : "В какой день? dd/mm",
+
+
 
 
         #! my reminders
-        "no_reminders" : "У вас нет напоминаний.",
+        "no_reminders" : "У тя нет напоминаний.",
         "my_title" : "🔔 Название",
         "my_date" : "📅 Дата ",
         "my_time" : "🕒 Время",
@@ -98,7 +104,6 @@ lexicon_hdl = {
 
 
 
-
     },
 
 
@@ -137,7 +142,7 @@ lexicon_hdl = {
         "wrong_time" : "Wrong time format",
         "wrong_time_limit" : "More than 4 times entered",
         "wrong_time_duplicate" : "No duplicate times are allowed",
-        "wrong_date" : "Wrong date format DD/MM",
+        "wrong_date" : "Wrong date format",
         "wrong_interval" : "Wrong interval format (min. - 15 minutes, max. - 300 minutes)",
 
 
@@ -146,14 +151,19 @@ lexicon_hdl = {
         "ask_daily_type" : "Choose the repeat type",
         "ask_daily_title" : "What should I remind you of?",
         "ask_daily_time" : "And the time? (HH:MM HH:MM ...)",
-        "check_daily" : 'check\nrepeat type - *daily*',
+        "check_daily" : 'Check\nRepeat type - *Daily*',
 
         #! hourly type
         "ask_hourly_title" : "What should I remind you of?",
         "ask_hourly_interval" : "What the interval is? (minutes)",
         "ask_hourly_start_time" : "When should I start to remind you?",
         "ask_hourly_end_time" : "And when should I stop to remind you?",
-        "check_hourly" : 'check\nrepeat type - *hourly*',
+        "check_hourly" : 'Check\nRepeat type - *Hourly*',
+
+
+        #! yearly type 
+        "check_yearly" : "Check\nRepeat type - *Yearly*",
+        "ask_yearly_date" : "On which day? dd/mm",
 
 
          #! my reminders
@@ -176,10 +186,10 @@ lexicon_hdl = {
 
         "my_ask_title" : "What should I remind you of?", 
         "my_ask_date" : "On which day?",
-        "my_ask_time" : "And the time? (HH:MM)",
+        "my_ask_time" : "And the time? _(HH:MM)_",
 
         "my_ask_daily_title" : "What should I remind you of?",
-        "my_ask_daily_time" : "And the time? (HH:MM HH:MM ...)",
+        "my_ask_daily_time" : "And the time? _(HH:MM HH:MM ...)_",
 
         "my_ask_hourly_title" : "What should I remind you of?",
         "my_ask_hourly_interval" : "What the interval is? (minutes)",
