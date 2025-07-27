@@ -21,7 +21,7 @@ db_port = os.getenv("DB_PORT")
 db_name = os.getenv("DB_NAME")
 
 sqlalchemy_url = f"postgresql://{db_user}:{db_pass}@{db_host}:{db_port}/{db_name}"
-
+config.set_main_option("sqlalchemy.url", sqlalchemy_url)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
