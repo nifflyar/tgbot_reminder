@@ -5,6 +5,7 @@ from typing import Annotated, Optional
 from sqlalchemy import (
     ARRAY,
     TIMESTAMP,
+    BigInteger,
     CheckConstraint,
     Column,
     Enum,
@@ -38,7 +39,7 @@ class UsersOrm(Base):
     __tablename__ = "users"
 
     id: Mapped[intpk]
-    tg_id: Mapped[BIGINT] = mapped_column(unique=True)
+    tg_id: Mapped[int] = mapped_column(BigInteger, unique=True)
     language: Mapped[str]
     timezone: Mapped[str] = mapped_column(nullable=False)
     notifications: Mapped[bool]
