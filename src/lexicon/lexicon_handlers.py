@@ -16,7 +16,7 @@ lexicon_hdl = {
 
         "change_timezone" : "Выбери часовой пояс (в КЗ utc+5)",
 
-        "timezone_alert" : "изменять часовой пояс можно раз в день",
+        "timezone_alert" : "изменять часовой пояс можно раз в 12 часов",
 
         "new_reminder_type_menu" : "Для начала выбери тип напоминания",
 
@@ -120,7 +120,7 @@ lexicon_hdl = {
 
         "change_timezone" : "Choose timezone(in KZ utc+5)",
         
-        "timezone_alert" : "you can change the timezone only once a day",
+        "timezone_alert" : "you can change the timezone only once in 12 hours",
 
         "new_reminder_type_menu" : "Choose the type of reminder",
 

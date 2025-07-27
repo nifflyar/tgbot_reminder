@@ -90,7 +90,7 @@ async def tz_change(callback: CallbackQuery):
     if user.timezone_updated_at is None:
         await callback.message.edit_text(text = lexicon_hdl[user.language]["change_timezone"], reply_markup= await merge_keyboards(await mainkb.change_timezone_keyboard(tz_user), await back_button(user.language, "settings")))
     
-    elif (datetime.datetime.utcnow() - user.timezone_updated_at > datetime.timedelta(days=1)):
+    elif (datetime.datetime.utcnow() - user.timezone_updated_at > datetime.timedelta(hours=12)):
         await callback.message.edit_text(text = lexicon_hdl[user.language]["change_timezone"], reply_markup= await merge_keyboards(await mainkb.change_timezone_keyboard(tz_user), await back_button(user.language, "settings")))
     
     else:
