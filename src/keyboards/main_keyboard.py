@@ -139,13 +139,13 @@ async def change_timezone_keyboard(picked: int):
         if i != picked:
             kb.add(
                 InlineKeyboardButton(
-                    text=f"UTC+{i}", callback_data=f"change_utc_+{i}"
+                    text=f"UTC+{i}", callback_data=f"change_utc_{i}"
                 )
             )
         else:
             kb.add(
                 InlineKeyboardButton(
-                    text=f"[UTC+{i}]", callback_data=f"change_utc_+{i}"
+                    text=f"[UTC+{i}]", callback_data=f"change_utc_{i}"
                 )
             )
 
