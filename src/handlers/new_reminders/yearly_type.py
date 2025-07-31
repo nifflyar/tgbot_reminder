@@ -37,7 +37,7 @@ class Yearly(StatesGroup):
     first_mes_id = State()
 
 
-MAX_REMINDERS = 4
+MAX_REMINDERS = 7
 
 
 
