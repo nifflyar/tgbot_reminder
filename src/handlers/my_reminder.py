@@ -9,6 +9,7 @@ from aiogram.fsm.context import FSMContext
 from pydantic import ValidationError
 
 from db.schemas import DateSchema, DesciptionSchema, IntervalSchema, TimeSchema
+from handlers.new_reminders.daily_type import MAX_TIMES, DuplicateTimeError, TimesLimit, parse_and_validate_times, sorted_time
 from handlers.new_reminders.onetime_type import make_calendar
 import src.keyboards.main_keyboard as mainkb
 import src.keyboards.new_remind_keyboard as newkb
@@ -1439,7 +1440,7 @@ async def edit_time(message: Message, state: FSMContext):
 
     if type_ == "onetime":
         try:
-            TimeSchema.model_validate({"time": message.text})
+            time_ = (TimeSchema.model_validate({"time" : message.text})).time
         except ValidationError as e:
 
             await safe_delete(message)
@@ -1464,8 +1465,59 @@ async def edit_time(message: Message, state: FSMContext):
         times = (message.text).split()
 
         try:
-            for time in times:
-                TimeSchema.model_validate({"time": time})
+            for i in range(len(times)):
+                times[i] = (TimeSchema.model_validate({"time" : times[i]})).time
+
+
+            parse_and_validate_times(times)
+
+            if len(times) > MAX_TIMES:
+                raise TimesLimit
+            
+            times = sorted_time(times)
+            time_ = " ".join(str(time) for time in times)
+            
+
+        except DuplicateTimeError:
+            await safe_delete(message)
+            await safe_edit_text(
+                bot=message.bot,
+                message=message,
+                chat_id=message.chat.id,
+                message_id=state_data["my_first_mes_id"],
+                text=f"{lexicon_hdl[user.language]['wrong_time_duplicate']}\n\n{lexicon_hdl[user.language]['my_ask_daily_time']}\n\n{reminder_text}",
+                reply_markup=await myrkb.editing_info(
+                    lang=user.language,
+                    active_archive=active_archive,
+                    page=page,
+                    type=type_,
+                    number=number,
+                ),
+                parse_mode="Markdown"
+            )
+            return
+                
+        except TimesLimit:
+            await safe_delete(message)
+            await safe_edit_text(
+                bot=message.bot,
+                message=message,
+                chat_id=message.chat.id,
+                message_id=state_data["my_first_mes_id"],
+                text=f"{lexicon_hdl[user.language]['wrong_time_limit']}\n\n{lexicon_hdl[user.language]['my_ask_daily_time']}\n\n{reminder_text}",
+                reply_markup=await myrkb.editing_info(
+                    lang=user.language,
+                    active_archive=active_archive,
+                    page=page,
+                    type=type_,
+                    number=number,
+                ),
+                parse_mode="Markdown"
+            )
+            return
+        
+
+
         except ValidationError as e:
             await safe_delete(message)
             await safe_edit_text(
@@ -1490,7 +1542,7 @@ async def edit_time(message: Message, state: FSMContext):
         tg_id=message.from_user.id,
         state=state,
         field="my_time",
-        value=message.text,
+        value=time_,
         message=message,
     )
 
@@ -1585,7 +1637,7 @@ async def edit_start_time(message: Message, state: FSMContext):
     )
 
     try:
-        TimeSchema.model_validate({"time": message.text})
+        time_ = (TimeSchema.model_validate({"time" : message.text})).time
     except ValidationError as e:
         await safe_delete(message)
         await safe_edit_text(
@@ -1604,12 +1656,13 @@ async def edit_start_time(message: Message, state: FSMContext):
             parse_mode="Markdown",
         )
         return
+    
     await update_my_reminder_field(
         lang=user.language,
         tg_id=message.from_user.id,
         state=state,
         field="my_start_time",
-        value=message.text,
+        value=time_,
         message=message,
     )
 
@@ -1645,7 +1698,7 @@ async def edit_end_time(message: Message, state: FSMContext):
     )
 
     try:
-        TimeSchema.model_validate({"time": message.text})
+        time_ = (TimeSchema.model_validate({"time" : message.text})).time
     except ValidationError as e:
         await safe_delete(message)
         await safe_edit_text(
@@ -1669,7 +1722,7 @@ async def edit_end_time(message: Message, state: FSMContext):
         tg_id=message.from_user.id,
         state=state,
         field="my_end_time",
-        value=message.text,
+        value=time_,
         message=message,
     )
 
@@ -1723,6 +1776,7 @@ async def remind_check(callback: CallbackQuery, state: FSMContext):
 
 @router.callback_query(F.data.startswith("my_new_save_"))
 async def save_changes(callback: CallbackQuery, state: FSMContext):
+
 
     state_data = await state.get_data()
     _, __, ___, number, page, type_, active_archive = state_data["my_data"].split(

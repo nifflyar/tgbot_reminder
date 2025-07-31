@@ -1,7 +1,7 @@
 from datetime import datetime, time
 from typing import Optional, List
 
-from pydantic import BaseModel, ConfigDict, Field, conlist, validator
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, conlist, field_validator, validator
 
 
 
@@ -9,8 +9,20 @@ class DesciptionSchema(BaseModel):
     description: str = Field(max_length=36)
 
 
+
 class TimeSchema(BaseModel):
-    time: time
+    time: str
+
+    @field_validator("time")
+    @classmethod
+    def normalize_time(cls, v: str) -> str:
+        try:
+            h, m = map(int, v.strip().split(":"))
+            if not (0 <= h <= 23 and 0 <= m <= 59):
+                raise ValueError
+            return f"{h:02}:{m:02}"
+        except:
+            raise ValueError
 
 
 class IntervalSchema(BaseModel):

@@ -145,7 +145,7 @@ async def hourly_start_time(message: Message, state: FSMContext):
     data = await state.get_data()
 
     try:
-        TimeSchema.model_validate({"time": message.text})
+        time_ = (TimeSchema.model_validate({"time" : message.text})).time
     except ValidationError as e:
         await safe_delete(message)
         await safe_edit_text(
@@ -160,7 +160,7 @@ async def hourly_start_time(message: Message, state: FSMContext):
         return
     
 
-    await state.update_data(reg_hourly_start_time=message.text)
+    await state.update_data(reg_hourly_start_time=time_)
     data = await state.get_data()
 
     await safe_delete(message)
@@ -183,7 +183,7 @@ async def hourly_start_time(message: Message, state: FSMContext):
     data = await state.get_data()
 
     try:
-        TimeSchema.model_validate({"time": message.text})
+        time_ = (TimeSchema.model_validate({"time" : message.text})).time
     except ValidationError as e:
         await safe_delete(message)
         await safe_edit_text(
@@ -197,7 +197,7 @@ async def hourly_start_time(message: Message, state: FSMContext):
         )
         return
     
-    await state.update_data(reg_hourly_end_time=message.text)
+    await state.update_data(reg_hourly_end_time=time_)
     data = await state.get_data()
 
     await safe_delete(message)
@@ -359,7 +359,7 @@ async def edit_starttime(message: Message, state: FSMContext):
     data = await state.get_data()
 
     try:
-        TimeSchema.model_validate({"time": message.text})
+        time_ = (TimeSchema.model_validate({"time" : message.text})).time
     except ValidationError as e:
         await safe_delete(message)
         await safe_edit_text(
@@ -373,7 +373,7 @@ async def edit_starttime(message: Message, state: FSMContext):
         )
         return
     
-    await update_reminder_field(user.language, state, "reg_hourly_start_time", message.text, message)
+    await update_reminder_field(user.language, state, "reg_hourly_start_time", time_, message)
 
 
 @router.message(New_hourly.reg_hourly_edit_end_time)
@@ -382,7 +382,7 @@ async def edit_endtime(message: Message, state: FSMContext):
     data = await state.get_data()
 
     try:
-        TimeSchema.model_validate({"time": message.text})
+        time_ = (TimeSchema.model_validate({"time" : message.text})).time
     except ValidationError as e:
         await safe_delete(message)
         await safe_edit_text(
@@ -396,7 +396,7 @@ async def edit_endtime(message: Message, state: FSMContext):
         )
         return
     
-    await update_reminder_field(user.language, state, "reg_hourly_end_time", message.text, message)
+    await update_reminder_field(user.language, state, "reg_hourly_end_time", time_, message)
 
 
 

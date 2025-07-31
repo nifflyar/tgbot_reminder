@@ -7,7 +7,6 @@ def hourly_reminder(reminder_id, user_id, description, start_time, end_time, int
 
     now = datetime.utcnow()
     today = now.date()
-    tomorrow = now.date() + timedelta(days=1)
 
     current = datetime.combine(today, start_time)
     end = datetime.combine(today, end_time)

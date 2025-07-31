@@ -128,7 +128,7 @@ async def once_time(message : Message, state: FSMContext):
     data = await state.get_data()
 
     try:
-        TimeSchema.model_validate({"time" : message.text})
+        time_ = (TimeSchema.model_validate({"time" : message.text})).time
     except ValidationError as e:
         await safe_delete(message)
         await safe_edit_text(
@@ -143,7 +143,7 @@ async def once_time(message : Message, state: FSMContext):
         return
     
 
-    await state.update_data(time = message.text)
+    await state.update_data(time = time_)
     data = await state.get_data()
 
     await safe_delete(message)
@@ -254,7 +254,7 @@ async def edit_time(message: Message, state: FSMContext):
     data = await state.get_data()
 
     try:
-        TimeSchema.model_validate({"time" : message.text})
+        time_ = (TimeSchema.model_validate({"time" : message.text})).time
     except ValidationError as e:
         
         await safe_delete(message)
@@ -268,7 +268,7 @@ async def edit_time(message: Message, state: FSMContext):
                 reply_markup= await newkb.new_dont_change(user.language))
         return
             
-    await update_reminder_field(user.language, state, "time", message.text, message)
+    await update_reminder_field(user.language, state, "time", time_ , message)
 
 
 

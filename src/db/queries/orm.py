@@ -203,10 +203,10 @@ async def hourly_reminder_add(user_id : int,
         hourly_reminder(
             reminder_id=reminder.id,
             user_id=user.tg_id,
-            description=description,
-            start_time=start_time,
-            end_time=end_time,
-            interval_min=interval_min,
+            description=reminder.description,
+            start_time=reminder.start_time,
+            end_time=reminder.end_time,
+            interval_min=reminder.interval_min,
             scheduler=scheduler,
         )
 
@@ -373,7 +373,9 @@ async def select_my_active_daily_reminders(tg_id):
         for r in reminders:
             for t in r.times:
                 shifted = (datetime.datetime.combine(datetime.date.today(), t.time) + datetime.timedelta(hours=int(user.timezone))).time()
-                t.local_time = shifted  
+                t.local_time = shifted
+            r.times.sort(key=lambda t: t.local_time)
+
         return reminders
 
 
@@ -399,6 +401,7 @@ async def select_my_archive_daily_reminders(tg_id):
             for t in r.times:
                 shifted = (datetime.datetime.combine(datetime.date.today(), t.time) + datetime.timedelta(hours=int(user.timezone))).time()
                 t.local_time = shifted  
+            r.times.sort(key=lambda t: t.local_time)
         return reminders
 
 
