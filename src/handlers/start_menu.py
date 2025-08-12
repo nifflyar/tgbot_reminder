@@ -66,6 +66,7 @@ async def cmd_start(message: Message, state: FSMContext):
 
 @router.callback_query(F.data == "en")
 @router.callback_query(F.data == "ru")
+@router.callback_query(F.data == "kk")
 async def timezone(callback: CallbackQuery):
     lang = callback.data
     await callback.message.edit_text(

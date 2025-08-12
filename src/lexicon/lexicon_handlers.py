@@ -36,7 +36,7 @@ lexicon_hdl = {
         "check_daily": "Проверь\nтип повторения - *Ежедневно*",
         #! hourly type
         "ask_hourly_title": "О чем мне тебе напоминать?",
-        "ask_hourly_interval": "Какой интервал между напоминиями? (минуты)",
+        "ask_hourly_interval": "Какой интервал между напоминаниями? (минуты)",
         "ask_hourly_start_time": "Со скольки тебя напоминать?",
         "ask_hourly_end_time": "И до скольки?",
         "check_hourly": "Проверь\nТип повторения - *Почасово*",
@@ -61,7 +61,7 @@ lexicon_hdl = {
         "my_ask_daily_title": "О чем мне тебе напоминать?",
         "my_ask_daily_time": "Во сколько? _(HH:MM HH:MM ...)_",
         "my_ask_hourly_title": "О чем мне тебе напоминать?",
-        "my_ask_hourly_interval": "Какой интервал между напоминиями? (минуты)",
+        "my_ask_hourly_interval": "Какой интервал между напоминаниями? (минуты)",
         "my_ask_hourly_start_time": "Со скольки тебя напоминать?",
         "my_ask_hourly_end_time": "До скольки?",
         #! headline
@@ -79,6 +79,7 @@ lexicon_hdl = {
         "settings_hourformat": "Часовой формат",
         "settings_created_at": "Дата создания аккаунта",
     },
+
     "en": {
         "main_menu": "reminderreminderreminderreminderreminderreminderreminderreminderreminderreminderreminderreminderreminder",
         "new_reminder": "First choose the type of reminder",
@@ -158,7 +159,91 @@ lexicon_hdl = {
         "settings_hourformat": "Hour Format",
         "settings_created_at": "Account Creation Date",
     },
+
+
+    "kk": {
+    "main_menu": "ескесалғышескесалғышескесалғышескесалғышескесалғышескесалғышескесалғыш",
+    "new_reminder": "Алдымен еске салғыш түрін таңда",
+    "settings": "Параметрлер",
+    "more": (
+            "‎\n"
+            "         ╱|、\n"
+            "       (˚ˎ 。7 \n"
+            "        |、˜〵\n"
+            "       じしˍ,)ノ\n"
+
+    ),
+    "timezone": "Енді өзіңнің уақыт белдеуіңді таңда (Қаз. utc+5)",
+    "change_timezone": "Уақыт белдеуін таңда (Қаз. utc+5)",
+    "timezone_alert": "Уақыт белдеуін 12 сағатта бір рет өзгертуге болады",
+    "new_reminder_type_menu": "Алдымен еске салу түрін таңда",
+    "choose_language": "Тілді таңда",
+    "limit_reminders1": "сенде еске салғыштар саны ",
+    "limit_reminders2": " көп",
+    #! one time type
+    "ask_title": "Саған нені еске салу керек?",
+    "ask_date": "Қай күні?",
+    "ask_time": "Қай уақытта? (HH:MM)",
+    "check": "Тексер",
+    "wrong_title": "Мәтін тым ұзын (макс. 36 таңба)",
+    "wrong_time": "Уақыт форматы қате",
+    "wrong_time_limit": "4-тен көп уақыт енгізілді",
+    "wrong_time_duplicate": "Бірдей уақытты енгізуге болмайды",
+    "wrong_date": "Күн форматы қате",
+    "wrong_interval": "Интервал форматы қате (мин. - 15 минут, макс. - 300 минут)",
+    #! daily type
+    "ask_daily_title": "Саған нені еске салу керек?",
+    "ask_daily_type": "Енді қайталану түрін таңда",
+    "ask_daily_time": "Қай уақытта? (HH:MM HH:MM ...)",
+    "check_daily": "Тексер\nқайталану түрі - *Күн сайын*",
+    #! hourly type
+    "ask_hourly_title": "Саған нені еске салу керек?",
+    "ask_hourly_interval": "Еске салулар арасындағы интервал қандай? (минут)",
+    "ask_hourly_start_time": "Қай уақыттан бастап еске салғыш керек?",
+    "ask_hourly_end_time": "Қай уақытқа дейін?",
+    "check_hourly": "Тексер\nҚайталану түрі - *Сағат сайын*",
+    #! yearly type
+    "check_yearly": "Тексер\nҚайталану түрі - *Жыл сайын*",
+    "ask_yearly_date": "Қай күн? dd/mm",
+    #! my reminders
+    "no_reminders": "Сенде еске салулар жоқ.",
+    "my_title": "🔔 Атауы",
+    "my_date": "📅 Күні",
+    "my_time": "🕒 Уақыты",
+    "interval": "Аралық",
+    "my_start_time": "Басталатын уақыт",
+    "my_end_time": "Аяқталатын уақыт",
+    "are_you_sure": "Сенімдісің бе?",
+    "choose_edit": "Өзгерту үшін таңда",
+    #! my reminder ask text
+    "my_ask_title": "Саған нені еске салу керек?",
+    "my_ask_date": "Қай күні?",
+    "my_ask_time": "Қай уақытта? _(HH:MM)_",
+    "my_ask_daily_type": "Енді қайталану түрін таңда",
+    "my_ask_daily_title": "Саған нені еске салу керек?",
+    "my_ask_daily_time": "Қай уақытта? _(HH:MM HH:MM ...)_",
+    "my_ask_hourly_title": "Саған нені еске салу керек?",
+    "my_ask_hourly_interval": "Еске салулар арасындағы интервал қандай? (минут)",
+    "my_ask_hourly_start_time": "Қай уақыттан бастап еске салу керек?",
+    "my_ask_hourly_end_time": "Қай уақытқа дейін?",
+    #! headline
+    "onetime_type": "Бір реттік",
+    "hourly_type": "Сағат сайын",
+    "daily_type": "Күн сайын",
+    "weekly_type": "Апта сайын",
+    "monthly_type": "Ай сайын",
+    "yearly_type": "Жыл сайын",
+    "active": "Белсенді",
+    "archive": "Мұрағат",
+    #! settings
+    "settings_language": "Тіл",
+    "settings_timezone": "Уақыт белдеуі",
+    "settings_hourformat": "Сағат форматы",
+    "settings_created_at": "Аккаунт жасалған күні"
+    },
+
     "languages": {
+        "kk" : "Қазақ",
         "ru": "Русский",
         "en": "English",
     },

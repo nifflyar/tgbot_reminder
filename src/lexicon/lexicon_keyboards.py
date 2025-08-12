@@ -125,12 +125,69 @@ lexicon_kb = {
 
     },
 
+    "kk": {
+    "new_reminder": "Жаңа еске салғыш",
+    "my_reminders": "Менің еске салуларым",
+    "settings": "⚙️",
+    "more": "Басқа",
+    "back_to_main": "⬅ Мәзірге оралу",
+    "get_back": "⬅ Қайту",
+    "notifications": "Түнгі хабарландырулар",
+    "hour_format": "Сағат форматы",
+    "change_lang": "Тіл",
+    "change_timezone": "Уақыт белдеуі",
+    "contacts": "Байланыс",
+    "donate": "Донат <3",
+    "cancel": "Бас тарту",
+    "onetime_type": "Бір реттік",
+    "regular_type": "Қайталанатын",
+
+    #! one time type
+    "dont_change": "Өзгертпеу",
+    "title": "Атауы",
+    "date": "Күні",
+    "time": "Уақыты",
+    "create": "Құру",
+
+    #! repeat types
+    "hourly_type": "Сағат сайын",
+    "daily_type": "Күн сайын",
+    "weekly_type": "Апта сайын",
+    "monthly_type": "Ай сайын",
+    "yearly_type": "Жыл сайын",
+
+    #! hourly
+    "interval": "Аралық",
+    "start_time": "Басталатын уақыт",
+    "end_time": "Аяқталатын уақыт",
+
+    #! my reminders
+    "active": "🔥Белсенді",
+    "archive": "🗂️Мұрағат",
+    "edit": "📝Өзгерту",
+    "deactivate": "🚫",
+    "delete": "❌",
+
+    "edit_text": "📝Өзгерту",
+    "deactivate_text": "🚫Өшіру",
+    "activate_text": "🌟Қосу",
+    "delete_text": "🗑️Жою",
+
+    "yes": "Иә",
+    "no": "Жоқ",
+
+    "save": "Сақтау"
+    },
+
+
     "flags" : {
+        "kk" : "🇰🇿",
         "en" : "🇬🇧🇺🇸",
         "ru" : "🇷🇺",
     },
 
     "languages" : {
+        "kk" : "Қазақ",
         "ru" : "Русский",
         "en" : "English",
     },
